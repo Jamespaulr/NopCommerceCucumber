@@ -16,7 +16,7 @@ public class MyStepdefs {
     @Given("User launch the chrome browser")
     public void userLaunchTheChromeBrowser()
     {
-        System.setProperty("webdriver.chrome.driver", "C:/Users/James Paul R/IdeaProjects/NopCommerceCucumber/Drivers/msedgedriver.exe");
+        System.setProperty("webdriver.edge.driver", "C:/Users/James Paul R/IdeaProjects/NopCommerceCucumber/Drivers/msedgedriver.exe");
         driver=new EdgeDriver();
         driver.manage().window().maximize();
         lp = new LoginPage(driver);
