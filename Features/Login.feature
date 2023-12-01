@@ -1,5 +1,5 @@
 Feature: Login
-
+@Login
   Scenario: Login into the application with valid Credentials.
     Given User launch the chrome browser
     When User opens url "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F"

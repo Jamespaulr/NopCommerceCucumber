@@ -10,13 +10,14 @@ import java.util.Random;
 
 public class CustomerPage
 {
-    WebDriver ldriver;
+    String title;
+    public WebDriver ldriver;
     public CustomerPage(WebDriver rdriver)
     {
         ldriver=rdriver;
         PageFactory.initElements(rdriver,this);
     }
-    By Customer_menu=By.xpath("/html/body/div[3]/aside/div/div[4]/div/div/nav/ul/li[4]/a/p");
+    By Customer_menu=By.xpath("//p[text()=' Customers']");
     By Customer=By.xpath("//p[text()=' Customers']");
 
     By addNewCust=By.xpath("//a[@href=\"/Admin/Customer/Create\"]");
@@ -45,13 +46,8 @@ public class CustomerPage
 
     public String getPageTitle() throws InterruptedException {
         Thread.sleep(5000);
-        try {
-            return ldriver.getTitle();
-        } catch (Exception e) {
-            System.out.println("Exception caught");
-        }
-
-        return null;
+            title= ldriver.getTitle();
+        return title;
     }
 
     public void clickOnCustomerList()

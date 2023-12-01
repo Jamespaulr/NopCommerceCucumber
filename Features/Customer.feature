@@ -1,5 +1,6 @@
 Feature: Customer
 
+  @Customer
   Scenario: Add new Customer
     Given User launch the chrome browser
     When User opens url "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F"
