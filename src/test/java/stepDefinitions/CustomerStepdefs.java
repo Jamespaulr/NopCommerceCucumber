@@ -10,21 +10,16 @@ public class CustomerStepdefs {
 
     CustomerPage CustPage;
     WebDriver driver;
+
     @Then("User can view the Dashboard")
     public void userCanViewTheDashboard() throws InterruptedException {
-        CustPage= new CustomerPage(driver);
-        try {
-            Assert.assertEquals("Dashboard / nopCommerce administration",CustPage.getPageTitle());
-
-        } catch (Exception e) {
-            System.out.println("hsah");
-        }
-
+        Thread.sleep(3000);
+            Assert.assertEquals("Dashboard / nopCommerce administration",driver.getTitle());
     }
 
     @And("User clicks on customers dropdown")
-    public void userClicksOnCustomersDropdown()
-    {
+    public void userClicksOnCustomersDropdown() throws InterruptedException {
+        Thread.sleep(3000);
         CustPage.clickOnCustomerList();
     }
 
@@ -40,13 +35,10 @@ public class CustomerStepdefs {
     }
 
     @Then("User can view the Customer new page")
-    public void userCanViewTheCustomerNewPage() throws InterruptedException {
-       try {
-           Assert.assertEquals("Add a new customer / nopCommerce administration",CustPage.getPageTitle());
-       }catch
-       (Exception e) {
-           System.out.println("Exception caught");
-    }}
+    public void userCanViewTheCustomerNewPage() {
+
+           Assert.assertEquals("Add a new customer / nopCommerce administration",driver.getTitle());
+     }
 
     @Then("User enters all the details")
     public void userEntersAllTheDetails()
@@ -66,11 +58,11 @@ public class CustomerStepdefs {
     @And("clicks on save")
     public void clicksOnSave()
     {
-        CustPage.clickSave();
+//        CustPage.clickSave();
     }
 
     @Then("User can view the confirmation message {string}")
-    public void userCanViewTheConfirmationMessage(String arg0) throws InterruptedException {
-        System.out.println("Done");
+    public void userCanViewTheConfirmationMessage(String Confirmation) {
+        Assert.assertEquals(Confirmation,driver.getTitle());
     }
 }
